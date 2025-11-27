@@ -12,6 +12,8 @@ use crate::{
     widgets::Checkbox,
 };
 
+use xash3d_shared::input::KeyState;
+
 mod i18n {
     pub use crate::i18n::menu::config_mouse::*;
 }
@@ -59,7 +61,7 @@ impl ConfigBackend<bool> for MouseLook {
         Some(
             engine()
                 .key_get_state(c"in_mlook")
-                .is_none_or(|i| i.is_down()),
+                .is_none_or(|i| KeyState::from_bits_retain(i.state).contains(KeyState::DOWN)),
         )
     }
 
@@ -88,7 +90,7 @@ impl ConfigBackend<bool> for Look {
         // TODO: store in_mlook in global state
         !engine()
             .key_get_state(c"in_mlook")
-            .is_some_and(|i| i.is_down())
+            .is_some_and(|i| KeyState::from_bits_retain(i.state).contains(KeyState::DOWN))
     }
 
     fn read(&self) -> Option<bool> {

@@ -86,9 +86,8 @@ dependencies = [
 
 [[package]]
 name = "csz"
-version = "0.3.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "eed14b6b5a4db14e0d014f67183794d016c154b11e965030d1248234b7fea2b3"
+version = "0.3.2"
+source = "git+https://github.com/FWGS/csz#2d9488c1aadfa8fc96e3d27d902b9bf209f4188f"
 
 [[package]]
 name = "darling"
@@ -154,6 +153,9 @@ name = "glam"
 version = "0.30.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bd47b05dddf0005d850e5644cae7f2b14ac3df487979dbfff3b56f20b1a6ae46"
+dependencies = [
+ "libm",
+]
 
 [[package]]
 name = "hashbrown"
@@ -395,18 +397,19 @@ checksum = "1fc81956842c57dac11422a97c3b8195a1ff727f06e85c84ed2e8aa277c9a0fd"
 
 [[package]]
 name = "xash3d-ffi"
-version = "0.2.1"
+version = "0.2.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "75489f933ce135991949677e27fb5b10c8196507a8cf1d3dc69264609478fca1"
+checksum = "4e30721fb0ea76f5f6346dd769cae62b70c95f0f21e573efb17e7c4eb9babcc6"
 dependencies = [
  "glam",
  "libc",
+ "libm",
 ]
 
 [[package]]
 name = "xash3d-hl-resources"
 version = "0.1.0"
-source = "git+https://github.com/numas13/xash3d-sdk.git#d6b8cf7ac0655d564fda64d5fae48eef71e0400f"
+source = "git+https://github.com/FWGS/xash3d-sdk.git#c94e3dcd29e97b9996b8dec9bada3067436b8aff"
 
 [[package]]
 name = "xash3d-maintui"
@@ -423,6 +426,7 @@ dependencies = [
  "xash3d-hl-resources",
  "xash3d-protocol",
  "xash3d-ratatui",
+ "xash3d-shared",
  "xash3d-ui",
 ]
 
@@ -450,10 +454,11 @@ dependencies = [
 [[package]]
 name = "xash3d-shared"
 version = "0.1.0"
-source = "git+https://github.com/numas13/xash3d-sdk.git#d6b8cf7ac0655d564fda64d5fae48eef71e0400f"
+source = "git+https://github.com/FWGS/xash3d-sdk.git#c94e3dcd29e97b9996b8dec9bada3067436b8aff"
 dependencies = [
  "bitflags",
  "csz",
+ "libm",
  "log",
  "xash3d-ffi",
 ]
@@ -461,7 +466,7 @@ dependencies = [
 [[package]]
 name = "xash3d-ui"
 version = "0.1.0"
-source = "git+https://github.com/numas13/xash3d-sdk.git#d6b8cf7ac0655d564fda64d5fae48eef71e0400f"
+source = "git+https://github.com/FWGS/xash3d-sdk.git#c94e3dcd29e97b9996b8dec9bada3067436b8aff"
 dependencies = [
  "bitflags",
  "log",
