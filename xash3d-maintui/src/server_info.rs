@@ -63,7 +63,6 @@ impl ServerInfo {
             match key {
                 "p" => {
                     ret.protocol = match trim_color(value).as_ref() {
-                        "48" => Protocol::Xash48,
                         "49" => Protocol::Xash49,
                         _ => Protocol::Current,
                     }
@@ -73,11 +72,6 @@ impl ServerInfo {
                 "gamedir" => ret.gamedir = trim_color(value).into(),
                 "numcl" => ret.numcl = trim_color(value).parse().unwrap_or_default(),
                 "maxcl" => ret.maxcl = trim_color(value).parse().unwrap_or_default(),
-                "legacy" => {
-                    if value == "1" {
-                        ret.protocol = Protocol::Xash48;
-                    }
-                }
                 "gs" => {
                     if value == "1" {
                         ret.protocol = Protocol::GoldSrc;

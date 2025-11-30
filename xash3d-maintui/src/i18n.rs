@@ -110,8 +110,7 @@ define_strings! {
 
             // favorite server protocol popup
             PROTOCOL_TITLE = "Select protocol",
-            PROTOCOL_XASH3D_49 = "Xash3D 49 (new)",
-            PROTOCOL_XASH3D_48 = "Xash3D 48 (old)",
+            PROTOCOL_XASH3D_49 = "Xash3D 49",
             PROTOCOL_GOLD_SOURCE_48 = "GoldSource 48",
         }
         create_server {

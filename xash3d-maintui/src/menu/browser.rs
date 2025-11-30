@@ -51,7 +51,6 @@ const SORT_LIST: &[&str] = &[SORT_CANCEL, SORT_PING, SORT_NUMCL, SORT_HOST, SORT
 
 const PROTOCOL_CANCEL: &str = i18n::CANCEL;
 const PROTOCOL_XASH3D_49: &str = i18n::PROTOCOL_XASH3D_49;
-const PROTOCOL_XASH3D_48: &str = i18n::PROTOCOL_XASH3D_48;
 const PROTOCOL_GOLD_SOURCE_48: &str = i18n::PROTOCOL_GOLD_SOURCE_48;
 
 #[derive(Copy, Clone, Default, PartialEq, Eq)]
@@ -110,9 +109,6 @@ impl ServerEntry {
 
     fn update_ping(&mut self) {
         self.ping = Duration::from_secs_f64(engine().system_time_f64() - self.query_time);
-        if self.info.protocol.is_legacy() {
-            self.ping /= 2;
-        }
     }
 
     fn connect(&self, password: Option<&str>) {
@@ -263,7 +259,6 @@ impl Browser {
                 [
                     PROTOCOL_CANCEL,
                     PROTOCOL_XASH3D_49,
-                    PROTOCOL_XASH3D_48,
                     PROTOCOL_GOLD_SOURCE_48,
                 ],
             ),
@@ -399,7 +394,6 @@ impl Browser {
                 self.state.cancel_default();
                 return;
             }
-            PROTOCOL_XASH3D_48 => Protocol::Xash48,
             PROTOCOL_XASH3D_49 => Protocol::Xash49,
             PROTOCOL_GOLD_SOURCE_48 => Protocol::GoldSrc,
             item => {
