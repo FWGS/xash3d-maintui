@@ -256,11 +256,7 @@ impl Browser {
             address_popup: InputPopup::new_text(i18n::ADDRESS_LABEL),
             protocol_popup: ListPopup::new(
                 i18n::PROTOCOL_TITLE,
-                [
-                    PROTOCOL_CANCEL,
-                    PROTOCOL_XASH3D_49,
-                    PROTOCOL_GOLD_SOURCE_48,
-                ],
+                [PROTOCOL_CANCEL, PROTOCOL_XASH3D_49, PROTOCOL_GOLD_SOURCE_48],
             ),
         }
     }
